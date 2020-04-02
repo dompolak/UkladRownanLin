@@ -12,7 +12,7 @@ class Wektor
 public: 
     Wektor();
     explicit Wektor(double, double, double);
-    explicit Wektor(double tab[]);
+    Wektor(double tab[]);
     Wektor operator + (const Wektor &) const;
     Wektor operator - (const Wektor &) const;
     double operator * (const Wektor &) const; //skalarnie
