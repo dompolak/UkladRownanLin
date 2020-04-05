@@ -145,7 +145,7 @@ void macierz::transponuj()
     }
 }
 
-double macierz::wyznacznik() const
+double macierz::wyznacznik()
 {
     double liczba = 0;
     macierz tmp(*this);

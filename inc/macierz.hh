@@ -19,7 +19,7 @@ public:
     macierz operator * (const macierz &) const;
     macierz operator * (const double &) const;
     Wektor operator * (const Wektor &) const;
-    double wyznacznik() const;
+    double wyznacznik();
     void odwroc();
     void transponuj();
 };
