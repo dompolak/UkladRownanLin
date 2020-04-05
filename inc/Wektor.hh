@@ -3,7 +3,7 @@
 
 #include "rozmiar.hh"
 #include<iostream>
-#include<cmath.h>
+#include<cmath>
 #include<cfloat>
 
 class Wektor
