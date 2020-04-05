@@ -3,7 +3,7 @@
 
 #include "rozmiar.hh"
 #include<iostream>
-#include<math.h>
+#include<cmath.h>
 #include<cfloat>
 
 class Wektor
@@ -12,7 +12,7 @@ class Wektor
 public: 
     Wektor();
     explicit Wektor(double, double, double);
-    Wektor(double tab[]);
+    Wektor(const double tab[]);
     Wektor operator + (const Wektor &) const;
     Wektor operator - (const Wektor &) const;
     double operator * (const Wektor &) const; //skalarnie

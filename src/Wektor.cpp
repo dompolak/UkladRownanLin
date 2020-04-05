@@ -15,7 +15,7 @@ Wektor::Wektor(double x, double y, double z)
     tab[2] = z;
 }
 
-Wektor::Wektor(double tab[])
+Wektor::Wektor(const double tab[])
 {   
     for(int i(0); i < ROZMIAR; i++)
     {

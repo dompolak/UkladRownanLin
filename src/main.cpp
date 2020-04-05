@@ -2,7 +2,7 @@
 
 int main()
 {
-    double tablica[ROZMIAR] = {2, 3, 4};
+    /*double tablica[ROZMIAR] = {2, 3, 4};
 
     Wektor wektor1(tablica);
     Wektor wektor2;
@@ -26,12 +26,15 @@ int main()
     }
 
     std::cout << "MACIERZE MACIERZE MACIERZE" << std::endl << std::endl << std::endl;
-
-    Wektor wektor_x(1, 2, 3), wektor_y(4, 5, 6), wektor_z(7, 8, 9);
-    macierz nowa(wektor_x, wektor_y, wektor_z);
-    std::cout << nowa << std::endl;
-
+    */
+    Wektor wektor_x(1, 2, 3), wektor_y(1, 2, 3), wektor_z(1, 2, 3);
+    macierz nowa2(wektor_x, wektor_y, wektor_z);
     macierz nowa1;
+    //Wektor jeden(9, 5, 5);
     std::cin >> nowa1;
-    std::cout << nowa1 << std::endl;
+    //nowa1.transponuj();
+    //Wektor jeden;
+    //std::cin >> jeden;
+    std::cout << std::endl << std::endl;
+    std::cout << nowa1.wyznacznik() << std::endl;
 }
