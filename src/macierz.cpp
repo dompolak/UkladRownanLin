@@ -150,23 +150,33 @@ double macierz::wyznacznik()
     double liczba = 0;
     macierz tmp(*this);
 
-    //brakuje warunku  gdy tmp[0][0] = 0
-    for(int i(1); i < ROZMIAR; i++)
-    {   
-        if(tab[0][0] == 0)
-        {liczba = 0; }
-        else 
-        {liczba = tmp[i][0] / tmp[0][0]; }
-
-        tmp[i] = tmp[i] - (tmp[0] * liczba);
+    for(int i(0); i < ROZMIAR; i++)
+    {
+        if(tmp[0][0] != 0)
+        {break; }
+        
+        std::swap(tmp[0], tmp[i]);
     }
 
+    if(tmp[0][0] == 0)
+    {
+        return 0;
+    }
+    
+    for(int i(1); i < ROZMIAR; i++)
+    {   
+        if(tmp[0][0] == 0)
+        {liczba = 0; }
+        else 
+        {tmp[i] = tmp[i] - (tmp[0] * (tmp[i][0] / tmp[0][0])); }
+    }
+    
     for(int i(2); i < ROZMIAR; i++)
     {
         for(int j(1); j < ROZMIAR-1; j++)
         {   
             if(tmp[i-1][j] == 0)
-            {continue; }
+            {liczba = 0; }
             else 
             {
                 tmp[i] = tmp[i] - (tmp[i-1] * (tmp[i][j] / tmp[i-1][j]));

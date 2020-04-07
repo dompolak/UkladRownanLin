@@ -31,10 +31,10 @@ int main()
     macierz nowa2(wektor_x, wektor_y, wektor_z);
     macierz nowa1;
     //Wektor jeden(9, 5, 5);
-    std::cin >> nowa1;
+    //std::cin >> nowa1;
     //nowa1.transponuj();
     //Wektor jeden;
-    //std::cin >> jeden;
+    std::cin >> nowa1;
     std::cout << std::endl << std::endl;
     std::cout << nowa1.wyznacznik() << std::endl;
-}
+}   
