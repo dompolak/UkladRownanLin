@@ -5,9 +5,14 @@
 
 #include "Wektor.hh"
 
+enum metoda_wyznacznika {m_gauss, m_sarrus, m_la_place};
+
 class macierz
 {
     Wektor tab[ROZMIAR];
+    double gauss(macierz) const;
+    //double la_place(macierz) const;
+    double sarrus(macierz) const;
 public:
     macierz();
     macierz(const Wektor tab[]);
@@ -19,10 +24,10 @@ public:
     macierz operator * (const macierz &) const;
     macierz operator * (const double &) const;
     Wektor operator * (const Wektor &) const;
-    double wyznacznik();
-    void odwroc();
+    double wyznacznik(const metoda_wyznacznika &) const;
     void transponuj();
 };
+
 
 std::ostream &operator << (std::ostream &, const macierz&);
 std::istream &operator >> (std::istream &, macierz &);

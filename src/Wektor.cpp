@@ -94,10 +94,7 @@ bool Wektor::operator == (const Wektor &Arg1) const
 
 bool Wektor::operator != (const Wektor &Arg1) const
 {
-    if(!(*this == Arg1))
-    {return true; }
-
-    return false;
+    return !(*this == Arg1);
 }
 
 const double &Wektor::operator [] (const int &index) const

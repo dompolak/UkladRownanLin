@@ -11,7 +11,7 @@ class Wektor
     double tab[ROZMIAR];
 public: 
     Wektor();
-    explicit Wektor(double, double, double);
+    Wektor(double, double, double);
     Wektor(const double tab[]);
     Wektor operator + (const Wektor &) const;
     Wektor operator - (const Wektor &) const;

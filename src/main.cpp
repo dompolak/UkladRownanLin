@@ -27,14 +27,15 @@ int main()
 
     std::cout << "MACIERZE MACIERZE MACIERZE" << std::endl << std::endl << std::endl;
     */
-    Wektor wektor_x(1, 2, 3), wektor_y(1, 2, 3), wektor_z(1, 2, 3);
-    macierz nowa2(wektor_x, wektor_y, wektor_z);
-    macierz nowa1;
+    Wektor wektor_x(5, -1, 3), wektor_y(0, 1, -2), wektor_z(4, 3, 2);
+    macierz nowa1(wektor_x, wektor_y, wektor_z);
+    //macierz nowa1;
     //Wektor jeden(9, 5, 5);
     //std::cin >> nowa1;
     //nowa1.transponuj();
     //Wektor jeden;
-    std::cin >> nowa1;
-    std::cout << std::endl << std::endl;
-    std::cout << nowa1.wyznacznik() << std::endl;
+    //std::cin >> nowa1;
+    std::cout << "Gauss:  " << nowa1.wyznacznik(m_gauss) << std::endl << std::endl;
+    std::cout << "Sarrus: " << nowa1.wyznacznik(m_sarrus) << std::endl;
+    
 }   

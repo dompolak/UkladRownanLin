@@ -145,55 +145,20 @@ void macierz::transponuj()
     }
 }
 
-double macierz::wyznacznik()
+double macierz::wyznacznik(const metoda_wyznacznika &metoda) const
 {
-    double liczba = 0;
-    macierz tmp(*this);
-
-    for(int i(0); i < ROZMIAR; i++)
+    switch(metoda)
     {
-        if(tmp[0][0] != 0)
-        {break; }
-        
-        std::swap(tmp[0], tmp[i]);
+        case m_gauss:
+            return gauss(*this);
+            break;
+        case m_sarrus:
+            return sarrus(*this);
+            break;
+        case m_la_place:
+            //return la_place(*this);
+            break;
     }
 
-    if(tmp[0][0] == 0)
-    {
-        return 0;
-    }
-    
-    for(int i(1); i < ROZMIAR; i++)
-    {   
-        if(tmp[0][0] == 0)
-        {liczba = 0; }
-        else 
-        {tmp[i] = tmp[i] - (tmp[0] * (tmp[i][0] / tmp[0][0])); }
-    }
-    
-    for(int i(2); i < ROZMIAR; i++)
-    {
-        for(int j(1); j < ROZMIAR-1; j++)
-        {   
-            if(tmp[i-1][j] == 0)
-            {liczba = 0; }
-            else 
-            {
-                tmp[i] = tmp[i] - (tmp[i-1] * (tmp[i][j] / tmp[i-1][j]));
-            }
-        }
-   }
-
-   liczba = 1;
-   for(int i(0); i < ROZMIAR; i++)
-   {
-      liczba = liczba * tmp[i][i];
-   }
-
-   return liczba;
-}
-
-void macierz::odwroc()
-{
-    
+    return 0;
 }
