@@ -164,5 +164,6 @@ double macierz::wyznacznik(const metoda_wyznacznika &metoda) const
             break;
     }
 
+    std::cerr << "Nie ma takiej metody! Podaj prawidlowa metode!" << std::endl;
     return 0;
 }
