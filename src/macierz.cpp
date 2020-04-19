@@ -53,7 +53,11 @@ std::ostream &operator << (std::ostream &strm, const macierz &Arg1)
 {
     for(int i(0); i < ROZMIAR; i++)
     {
-        strm << Arg1[i] << std::endl;
+        strm << Arg1[i];
+        if(i != ROZMIAR - 1)
+        {
+            strm << std::endl;
+        }
     }
 
     return strm;

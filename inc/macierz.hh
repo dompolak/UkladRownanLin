@@ -1,5 +1,3 @@
-#include "Wektor.hh"
-
 #ifndef _MACIERZ_HH
 #define _MACIERZ_HH
 
