@@ -5,6 +5,12 @@ uklad_rownan::uklad_rownan()
 
 }
 
+/****************************
+*   Funckje pozwalajace na odczytanie oraz przypisanie wartosc
+*   dla argumentow ukladu rownan
+*
+****************************/
+
 const macierz & uklad_rownan::get_arg1() const
 {
     return this->arg1;
@@ -51,6 +57,15 @@ std::ostream &operator << (std::ostream &strm, const uklad_rownan &uklad)
     return strm;
 }
 
+/****************************
+*   Funckja sluzaca do wyliczenia rozwiazan danego ukladu rownan
+*   Uklad jest rozwiazywany wzorami cramera
+*   wczytuje macierz transponowana i z niej wylicza wartosci
+*   najpierw zostaje wyliczany wyznacznik macierzy glownej
+*   a nastepnie liczymy wyznaczniki pozostalych macierzy gdzie zamieniamy caly wiersz 
+*   z wierszem wyrazow wolnych 
+****************************/
+
 Wektor uklad_rownan::Oblicz() const
 {
     macierz tmp1(this->arg1);
@@ -89,6 +104,12 @@ Wektor uklad_rownan::Oblicz() const
     return tmp2;
 }
 
+/****************************
+*   Funckja wyliczaja wektor bledu
+*   przyjmuje 2 argumenty 
+*   uklad rownan oraz wektor wynikow wczesniej wyliczonych tego ukladu
+*
+****************************/
 
 Wektor wektor_bledu(const uklad_rownan &uklad, const Wektor &wynik)
 {

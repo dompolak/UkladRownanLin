@@ -1,5 +1,13 @@
 #include "macierz.hh"
 
+/****************************
+*   Funckja liczaca wyznacznik macierzy metoda gaussa
+*   Funckja sprowadza macierz do macierzy gornotrojkanej
+*   oraz nastepnie wylicza z takiej macierzy wyznacznik mnozac przez siebie
+*   liczby na glownej przekatnej
+*
+****************************/
+
 double macierz::gauss(macierz tmp) const
 {
     double liczba = 0;
@@ -45,6 +53,11 @@ double macierz::gauss(macierz tmp) const
    return liczba;
 }
 
+/****************************
+*   Funckja liczaca wyznacznik metoda la_placa
+*   wyznacznik liczony w tej funkcji jest liczony rekurencyjnie
+*
+****************************/
 double macierz::la_place(int stopien, macierz tmp, int wiersz, Wektor kolumn) const
 {
     double suma;
@@ -75,6 +88,12 @@ double macierz::la_place(int stopien, macierz tmp, int wiersz, Wektor kolumn) co
 
     return suma;
 }
+
+/****************************
+*   Funckja liczaca wyznacznik metoda sarrusa dla macierzy 3 stopnia
+*   
+*
+****************************/
 
 double macierz::sarrus(macierz tmp) const
 {

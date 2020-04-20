@@ -1,5 +1,13 @@
 #include "Wektor.hh"
 
+/****************************
+*   Konstruktory dla klasy wektor
+*   Pierwszy konsktruktor bezargumentowy zeruje caly wektor
+*   Drugi konstruktor przyjmuje 3 liczby typu double 
+*   Trzeci wektor przyjumuje tablice 3 elementowa
+*
+****************************/
+
 Wektor::Wektor()
 {
     for(int i(0); i < ROZMIAR; i++)
@@ -23,6 +31,11 @@ Wektor::Wektor(const double tab[])
     }
 }
 
+/****************************
+*   Przeciazenie operatora dodawania 
+*   
+*
+****************************/
 Wektor Wektor::operator + (const Wektor &Arg1) const
 {
     Wektor wynik;
@@ -32,6 +45,12 @@ Wektor Wektor::operator + (const Wektor &Arg1) const
     }  
     return wynik;
 }
+
+/****************************
+*   Przeciazenie operatora odejmowania 
+*   
+*
+****************************/
 
 Wektor Wektor::operator - (const Wektor &Arg1) const
 {
@@ -43,6 +62,13 @@ Wektor Wektor::operator - (const Wektor &Arg1) const
     return wynik;
 }
 
+/****************************
+*   Przeciazenie operatora mnozenia 
+*   Argumentami sa 2 wektory
+*   Funckja mnozy wektory przez siebie skalarnia 
+*   Wynikiem jest liczba typu double
+****************************/
+
 double Wektor::operator * (const Wektor &Arg1) const
 {
     double wynik = 0;
@@ -53,6 +79,11 @@ double Wektor::operator * (const Wektor &Arg1) const
     return wynik;
 }
 
+/****************************
+*   Przeciazenie operator mnozenia
+*   Argumentami sa liczba oraz wektor
+*   Wynikiem jest wektor pomnozony przez liczbe 
+****************************/
 Wektor Wektor::operator * (const double &liczba) const
 {
     Wektor wynik;
@@ -62,6 +93,12 @@ Wektor Wektor::operator * (const double &liczba) const
     }
     return wynik;
 }
+
+/****************************
+*   Przeciazenie operatora dzielenia
+*   Argumentami sa liczba oraz wektor
+*   Wynikiem jest wektor podzielony przez liczbe
+****************************/
 
 Wektor Wektor::operator / (const double &liczba) const
 {
@@ -81,6 +118,12 @@ Wektor Wektor::operator / (const double &liczba) const
     return wynik;
 }
 
+/****************************
+*   Przeciazenie operatora porownania 
+*   
+*
+****************************/
+
 bool Wektor::operator == (const Wektor &Arg1) const
 {
     for(int i(0); i < ROZMIAR; i++)
@@ -96,6 +139,11 @@ bool Wektor::operator != (const Wektor &Arg1) const
 {
     return !(*this == Arg1);
 }
+
+/****************************
+*   Przeciazenia opearatora indeksowania 
+*
+****************************/
 
 const double &Wektor::operator [] (const int &index) const
 {
@@ -118,6 +166,12 @@ double &Wektor::operator [] (const int &index)
 
     return tab[index];
 }
+
+/****************************
+*   Funckja wyliczajaca dlugosc wektora
+*   
+*
+****************************/
 
 double Wektor::dlugosc() const
 {

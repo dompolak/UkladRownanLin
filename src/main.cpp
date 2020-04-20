@@ -12,18 +12,19 @@ std::cout << uklad << std::endl << std::endl;
 try
 {
     we_wynikow = uklad.Oblicz();
-    std::cout << we_wynikow << std::endl;
+    std::cout << "Rozwiazanie (x1, x2, x3): " << std::endl << std::endl;
+    std::cout << we_wynikow << std::endl << std::endl;
 
 }
 catch(std::string wyjatek)
 {
     if(wyjatek == "wyjatek1")
     {
-        std::cout << "Brak rozwiazan" << std::endl;
+        std::cout << "uklad sprzeczny" << std::endl;
     }
     if(wyjatek == "wyjatek2")
     {
-        std::cout << "Nieskonczenie wiele rozwiazan" << std::endl;
+        std::cout << "uklad sprzeczny albo nieoznaczony" << std::endl;
     }    
 }
 

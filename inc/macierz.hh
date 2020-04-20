@@ -3,7 +3,16 @@
 
 #include "Wektor.hh"
 
+/************
+*   Enum zdefuniowany do wybory metody liczenia wyznacznika
+*
+*************/
 enum metoda_wyznacznika {m_gauss, m_sarrus, m_la_place};
+
+/**********
+*   Zdefiniowana klasa wraz  z metodami do niej
+*
+***********/
 
 class macierz
 {

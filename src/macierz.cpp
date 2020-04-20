@@ -1,5 +1,11 @@
 #include "macierz.hh"
 
+/****************************
+*   Konstruktory dla klasy macierz 
+*   Pierwszy bezargumentowy, zeruje cala macierz
+*   Drugi przyjmuje tablice wektorow
+*   Trzeci przyjmuje 3 wektory
+****************************/
 macierz::macierz()
 {
     for(int i(0); i < ROZMIAR; i++)
@@ -27,6 +33,11 @@ macierz::macierz(Wektor A, Wektor B, Wektor C)
     
 }
 
+/****************************
+*   Przeciazenie opreratorow indeksowania 
+*   
+*
+****************************/
 const Wektor &macierz::operator[](const int &index1) const
 {
     if(index1 < 0 && index1 > ROZMIAR)
@@ -73,6 +84,12 @@ std::istream &operator >> (std::istream &strm, macierz &Arg1)
     return strm;
 }
 
+/****************************
+*   Przeciazenie operatora dodawania    
+*   Funckja przyjmujaca 2 argumenty 2 macierze 
+*   
+****************************/
+
 macierz macierz::operator + (const macierz &Arg1) const
 {   
     macierz wynik;
@@ -82,6 +99,12 @@ macierz macierz::operator + (const macierz &Arg1) const
     }
     return wynik;
 }
+
+/****************************
+*   Przeciazenie operatora odejmowania 
+*   Przyjmuje 2 macierze tego samego stopnia
+*
+****************************/
 
 macierz macierz::operator - (const macierz &Arg1) const
 {   
@@ -93,6 +116,12 @@ macierz macierz::operator - (const macierz &Arg1) const
 
     return wynik;
 }
+
+/****************************
+*   Przeciazenie operatora mnozenia 
+*   Funckja przyjmuje 2 argumenty 2 macierze 
+*
+****************************/
 
 macierz macierz::operator * (const macierz &Arg1) const
 {
@@ -110,6 +139,12 @@ macierz macierz::operator * (const macierz &Arg1) const
     return wynik;
 }
 
+/****************************
+*   Przeciazenie operatora mnozenia
+*   Mnozymy liczbe oraz macierz przez siebie
+*
+****************************/
+
 macierz macierz::operator * (const double &liczba) const
 {
     macierz wynik;
@@ -120,6 +155,12 @@ macierz macierz::operator * (const double &liczba) const
 
     return wynik;
 }
+
+/****************************
+*   Przeciazenie operatora mnozenia 
+*   Mnozymy wektora oraz macierz przez siebie
+*
+****************************/
 
 Wektor macierz::operator * (const Wektor & Arg1) const
 {
@@ -137,6 +178,12 @@ Wektor macierz::operator * (const Wektor & Arg1) const
     return wynik;
 }
 
+/****************************
+*   Funkcja sluzaca do transponowania macierzy
+*   
+*
+****************************/
+
 void macierz::transponuj()
 {   
     macierz tmp(*this);
@@ -148,6 +195,14 @@ void macierz::transponuj()
         }
     }
 }
+
+/****************************
+*   Funckja sluzaca do wyboru metody liczenia wyznacznika
+*   Wybieramy miedzy:
+*   metoda gaussa
+*   metoda sarrusa
+*   metoda laplaca
+****************************/
 
 double macierz::wyznacznik(const metoda_wyznacznika &metoda) const
 {

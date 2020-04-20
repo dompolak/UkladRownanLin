@@ -6,6 +6,11 @@
 #include<cmath>
 #include<cfloat>
 
+/*******************************************
+*    Tutaj zostala zdefiniowana klasa wraz z metodami do niej 
+*
+********************************************/
+
 class Wektor
 {
     double tab[ROZMIAR];
@@ -25,6 +30,10 @@ public:
     double dlugosc() const; 
 };
 
+/****************
+*   Przeciazenia operatorow wczytywania oraz wyswietlania
+*
+******************/
 std::ostream &operator << (std::ostream &strm, const Wektor &);
 std::istream &operator >> (std::istream &strm, Wektor &);
 

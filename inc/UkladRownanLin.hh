@@ -3,6 +3,13 @@
 
 #include "macierz.hh"
 
+/********************
+*   Klasa uklad_rownan jest tutaj zdefioniowana wraz z metodami
+*   Mamy tutaj 2 argumenty:
+*   macierz wspolczynnikow 
+*   wektor wyrazow wolnych
+**********************/
+
 class uklad_rownan
 {
     macierz arg1; //macierz wspolczynnikow
