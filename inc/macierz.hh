@@ -9,7 +9,7 @@ class macierz
 {
     Wektor tab[ROZMIAR];
     double gauss(macierz) const;
-    //double la_place(macierz) const;
+    double la_place(int, macierz, int, Wektor) const;
     double sarrus(macierz) const;
 public:
     macierz();

@@ -45,14 +45,36 @@ double macierz::gauss(macierz tmp) const
    return liczba;
 }
 
-/*double macierz::la_place(macierz tmp, int n)
+double macierz::la_place(int stopien, macierz tmp, int wiersz, Wektor kolumn) const
 {
-    if(n == 1)
+    double suma;
+    int m, k;
+
+
+    if(stopien == 1)
     {
-        return;
+        return tmp[wiersz][kolumn[0]];
     }
     else 
-}*/
+    {   
+        Wektor tmp2;
+        suma = 0;
+        m = 1;
+        for(int i(0); i < stopien ; i++)
+        {   
+            k = 0;
+            for(int j(0); j < stopien - 1; j++)
+            {
+                if(k == i) k++;
+                tmp2[j] = kolumn[k++];
+            }
+            suma += m * tmp[wiersz][kolumn[i]] * la_place(stopien - 1, tmp , wiersz + 1, tmp2);
+            m = -m;
+        }
+    }
+
+    return suma;
+}
 
 double macierz::sarrus(macierz tmp) const
 {

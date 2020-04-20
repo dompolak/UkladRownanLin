@@ -160,7 +160,8 @@ double macierz::wyznacznik(const metoda_wyznacznika &metoda) const
             return sarrus(*this);
             break;
         case m_la_place:
-            //return la_place(*this);
+            Wektor tmp(0,1,2);
+            return la_place(ROZMIAR, *this, 0, tmp);
             break;
     }
 
